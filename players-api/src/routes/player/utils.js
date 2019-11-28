@@ -22,8 +22,7 @@ const createPlayer = async playerData => {
 
 // Get Player
 const getPlayer = async playerId => {
-  const playerKey = datastore.key([ENTITY_KIND, playerId]);
-
+  const playerKey = datastore.key([ENTITY_KIND, parseInt(playerId)]);
   const [player] = await datastore.get(playerKey);
 
   return {
@@ -32,6 +31,7 @@ const getPlayer = async playerId => {
     lastName: player.lastName,
     age: player.age,
     position: player.position,
+    teamId: player.teamId,
     kind: ENTITY_KIND
   };
 };
@@ -54,6 +54,7 @@ const listPlayers = async () => {
         lastName: player.lastName,
         age: player.age,
         position: player.position,
+        teamId: player.teamId,
         kind: player[datastore.KEY].kind
       };
     });

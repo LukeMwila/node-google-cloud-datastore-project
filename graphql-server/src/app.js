@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require('express');
 const expressGraphQL = require('express-graphql');
 const bodyParser = require('body-parser');

@@ -22,8 +22,7 @@ const createTeam = async teamData => {
 
 // Get Team
 const getTeam = async teamId => {
-  const teamKey = datastore.key([ENTITY_KIND, teamId]);
-
+  const teamKey = datastore.key([ENTITY_KIND, parseInt(teamId)]);
   const [team] = await datastore.get(teamKey);
 
   return {

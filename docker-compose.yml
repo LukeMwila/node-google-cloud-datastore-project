@@ -21,7 +21,7 @@ services:
       context: ./graphql-server
       dockerfile: Dockerfile
     ports:
-      - "3005:3005"
+      - "3003:3003"
     restart: on-failure
     container_name: graphql-server-api
     environment:
