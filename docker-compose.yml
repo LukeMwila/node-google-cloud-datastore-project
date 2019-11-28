@@ -1,0 +1,29 @@
+version: "3"
+services:
+  players-api:
+    build:
+      context: ./players-api
+      dockerfile: Dockerfile
+    ports:
+      - "3001:3001"
+    restart: on-failure
+    container_name: players-api
+  teams-api:
+    build:
+      context: ./teams-api
+      dockerfile: Dockerfile
+    ports:
+      - "3002:3002"
+    restart: on-failure
+    container_name: teams-api
+  graphql-server-api:
+    build:
+      context: ./graphql-server
+      dockerfile: Dockerfile
+    ports:
+      - "3005:3005"
+    restart: on-failure
+    container_name: graphql-server-api
+    environment:
+      PLAYERS_API: players-api:3001
+      TEAMS_API: teams-api:3002
