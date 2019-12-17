@@ -1,1 +1,4 @@
 /config
+
+# package directories
+node_modules
