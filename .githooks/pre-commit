@@ -1,0 +1,17 @@
+# Husky
+huskyPackage='husky'
+if [ `npm list | grep -c $huskyPackage` -eq 0 ]; then
+  npm install $huskyPackage --no-shrinkwrap
+fi
+
+# Commit lint CLI
+commitlintCliPackage='@commitlint/cli'
+if [ `npm list | grep -c $commitlintCliPackage` -eq 0 ]; then
+  npm install $commitlintCliPackage --no-shrinkwrap
+fi
+
+# Commit lint config conventional
+commitlintConfig='@commitlint/config-conventional'
+if [ `npm list | grep -c $commitlintConfig` -eq 0 ]; then
+  npm install $commitlintConfig --no-shrinkwrap
+fi
