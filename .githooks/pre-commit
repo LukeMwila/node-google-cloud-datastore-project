@@ -1,3 +1,5 @@
+#!/bin/sh
+
 # Husky
 huskyPackage='husky'
 if [ `npm list | grep -c $huskyPackage` -eq 0 ]; then
